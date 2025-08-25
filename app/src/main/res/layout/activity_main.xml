@@ -7,13 +7,90 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+    <ImageView
+        android:id="@+id/iv_icon"
+        android:layout_width="256dp"
+        android:layout_height="256dp"
+        android:src="@drawable/ic_launcher_background"
+        android:scaleType="centerCrop"
+        app:layout_constraintVertical_bias="0.2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/ll_gameMode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="36dp"
+        android:weightSum="4"
+        android:layout_marginHorizontal="24dp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/iv_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_back"
+            app:srcCompat="@drawable/arrow_back"
+            app:fabSize="mini"
+            app:backgroundTint="@android:color/transparent"
+            app:elevation="0dp"
+            app:tint="@color/black"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_gameMode"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="Normal"
+            android:textSize="24sp"
+            android:gravity="center"
+            android:layout_weight="2"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_next"
+            app:srcCompat="@drawable/arrow_next"
+            app:fabSize="mini"
+            app:backgroundTint="@android:color/transparent"
+            app:elevation="0dp"
+            app:tint="@color/black"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_player"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintVertical_bias="0.2"
+        android:layout_marginHorizontal="24dp"
+        android:text="Player"
+        android:textSize="24sp"
+        android:gravity="center"
+        app:cornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll_gameMode" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_cpu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="24dp"
+        android:text="CPU"
+        android:textSize="24sp"
+        android:gravity="center"
+        app:cornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_player" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

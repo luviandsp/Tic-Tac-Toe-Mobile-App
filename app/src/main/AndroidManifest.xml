@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TicTacToe">
         <activity
+            android:name=".gameplay.VsCPU"
+            android:exported="false" />
+        <activity
+            android:name=".gameplay.VsPlayer"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
