@@ -40,6 +40,9 @@ android {
 
 dependencies {
 
+    // Slash Screen
+    implementation(libs.androidx.core.splashscreen)
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

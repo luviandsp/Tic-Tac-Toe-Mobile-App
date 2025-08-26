@@ -5,5 +5,11 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
+    <style name="Theme.TicTacToe.SplashScreen" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/white</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/app_icon_foreground</item>
+        <item name="postSplashScreenTheme">@style/Base.Theme.TicTacToe</item>
+    </style>
+
     <style name="Theme.TicTacToe" parent="Base.Theme.TicTacToe" />
 </resources>

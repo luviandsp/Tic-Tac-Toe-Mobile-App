@@ -1,11 +1,13 @@
 package com.luviandsp.tic_tac_toe.gameplay
 
+import android.content.res.Configuration
 import android.os.Bundle
-import android.widget.Button
+import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.button.MaterialButton
 import com.luviandsp.tic_tac_toe.R
 import com.luviandsp.tic_tac_toe.databinding.ActivityVsPlayerBinding
 
@@ -14,6 +16,12 @@ class VsPlayer : AppCompatActivity() {
     private lateinit var binding: ActivityVsPlayerBinding
     private var playerTurn = true
     private var moveCount = 0
+    private var gameMode = ""
+
+    companion object {
+        private const val TAG = "VsPlayer"
+        const val GAME_MODE = ""
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,6 +33,9 @@ class VsPlayer : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        gameMode = intent.getStringExtra(GAME_MODE).toString()
+        Log.d(TAG, "Game Mode: $gameMode")
 
         initViews()
     }
@@ -47,7 +58,7 @@ class VsPlayer : AppCompatActivity() {
         }
     }
 
-    private fun onClick(button: Button) {
+    private fun onClick(button: MaterialButton) {
         if (button.text.isEmpty()) {
             if (playerTurn) {
                 button.text = "X"
@@ -115,11 +126,16 @@ class VsPlayer : AppCompatActivity() {
         }
     }
 
+    private fun isDarkMode(): Boolean {
+        val currentNightMode = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
+        return currentNightMode == Configuration.UI_MODE_NIGHT_YES
+    }
+
     private fun resetGame() {
         with(binding) {
             arrayOf(btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9).forEach {
                 it.text = ""
-                it.setTextColor(getColor(R.color.black))
+                if (isDarkMode()) it.setTextColor(getColor(R.color.white)) else it.setTextColor(getColor(R.color.black))
             }
 
             playerTurn = true

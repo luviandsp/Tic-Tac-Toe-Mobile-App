@@ -14,7 +14,8 @@
         android:text="Player Turn"
         android:gravity="center"
         android:textSize="36sp"
-        android:layout_margin="8dp"
+        android:layout_margin="36dp"
+        app:fontFamily="@font/manrope_medium"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -22,7 +23,7 @@
     <LinearLayout
         android:id="@+id/ll_tictactoe"
         android:layout_width="match_parent"
-        android:layout_margin="12dp"
+        android:layout_margin="24dp"
         android:layout_height="0dp"
         android:orientation="vertical"
         app:layout_constraintDimensionRatio="1:1"
@@ -109,14 +110,10 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_reset"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cornerRadius="8dp"
-        android:text="Reset"
-        android:textSize="20sp"
-        app:backgroundTint="@color/black"
+        style="@style/Widget.App.MaterialButton.Transparent"
+        android:text="@string/reset"
         android:layout_marginBottom="24dp"
-        android:layout_marginHorizontal="12dp"
+        android:layout_marginHorizontal="36dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
