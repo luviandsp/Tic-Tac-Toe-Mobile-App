@@ -2,6 +2,20 @@
     <string name="app_name">Tic-Tac-Toe</string>
     <string name="vs_cpu">VS CPU</string>
     <string name="vs_player">VS Player</string>
-    <string name="select_game_mode">Select Game Mode:</string>
     <string name="reset">Reset</string>
+    <string name="select_cpu_difficulty">Select CPU Difficulty:</string>
+    <string name="cpu_difficulty">CPU Difficulty</string>
+    <string name="player_x_turn">Player X Turn</string>
+    <string name="player_o_turn">Player O Turn</string>
+    <string name="player_x_win">Player X Win!</string>
+    <string name="player_o_win">Player O Win!</string>
+    <string name="draw">Draw!</string>
+    <string name="player_x_win_count">Player X Total Win: %d</string>
+    <string name="player_o_win_count">Player O Total Win: %d</string>
+    <string name="player_turn">Player Turn</string>
+    <string name="cpu_turn">CPU Turn</string>
+    <string name="player_win">Player Win!</string>
+    <string name="cpu_win">CPU Win!</string>
+    <string name="player_win_count">Player Total Win: %d</string>
+    <string name="cpu_win_count">CPU (%1$s) Total Win: %2$d</string>
 </resources>

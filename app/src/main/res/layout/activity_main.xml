@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -7,79 +7,84 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/iv_icon"
-        android:layout_width="256dp"
-        android:layout_height="256dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/tic_tac_toe"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.15" />
-
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tv_mode"
-        style="@style/TextAppearance.Manrope.Light.16sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:gravity="center"
-        android:text="@string/select_game_mode"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_icon" />
-
-    <LinearLayout
-        android:id="@+id/ll_gameMode"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="24dp"
-        android:layout_marginTop="8dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:weightSum="2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_mode">
+        android:layout_height="wrap_content">
 
-        <ImageButton
-            android:id="@+id/btn_back"
-            style="@style/Widget.App.ImageButton.Transparent"
-            android:src="@drawable/arrow_back" />
+        <ImageView
+            android:id="@+id/iv_icon"
+            android:layout_width="256dp"
+            android:layout_height="256dp"
+            android:layout_marginTop="48dp"
+            android:src="@drawable/tic_tac_toe"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/tv_gameMode"
+            android:id="@+id/tv_diffculty"
             style="@style/TextAppearance.Manrope.Light.16sp"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1.75"
-            android:gravity="center" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:gravity="center"
+            android:text="@string/select_cpu_difficulty"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_icon" />
 
-        <ImageButton
-            android:id="@+id/btn_next"
-            style="@style/Widget.App.ImageButton.Transparent"
-            android:src="@drawable/arrow_next" />
+        <LinearLayout
+            android:id="@+id/ll_cpuDifficulty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_diffculty">
 
-    </LinearLayout>
+            <ImageButton
+                android:id="@+id/btn_prev_diff"
+                style="@style/Widget.App.ImageButton.Transparent"
+                android:src="@drawable/arrow_back" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_player"
-        style="@style/Widget.App.MaterialButton.Transparent"
-        android:layout_marginTop="32dp"
-        android:text="@string/vs_player"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ll_gameMode" />
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_cpuDifficulty"
+                style="@style/TextAppearance.Manrope.Light.16sp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.75"
+                android:gravity="center"
+                android:text="@string/cpu_difficulty" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_cpu"
-        style="@style/Widget.App.MaterialButton.Transparent"
-        android:layout_marginTop="20dp"
-        android:text="@string/vs_cpu"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_player" />
+            <ImageButton
+                android:id="@+id/btn_next_diff"
+                style="@style/Widget.App.ImageButton.Transparent"
+                android:src="@drawable/arrow_next" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_player"
+            style="@style/Widget.App.MaterialButton.Transparent"
+            android:layout_marginTop="32dp"
+            android:text="@string/vs_player"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ll_cpuDifficulty" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_cpu"
+            style="@style/Widget.App.MaterialButton.Transparent"
+            android:layout_marginTop="28dp"
+            android:layout_marginBottom="28dp"
+            android:text="@string/vs_cpu"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_player" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
