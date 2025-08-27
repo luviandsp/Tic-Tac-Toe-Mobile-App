@@ -7,7 +7,7 @@
 
     <style name="Theme.TicTacToe.SplashScreen" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">@color/black</item>
-        <item name="windowSplashScreenAnimatedIcon">@drawable/app_icon_foreground</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/splashscreen_icon</item>
         <item name="postSplashScreenTheme">@style/Base.Theme.TicTacToe</item>
     </style>
 
