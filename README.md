@@ -7,6 +7,7 @@ A classic Tic-Tac-Toe game developed natively for Android. This application allo
 * **Android Studio**: The official IDE for Android development.
 * **XML**: Used for designing and creating the application's user interface layouts.
 * **Coroutines**: Used for asynchronous and non-blocking operations to ensure the UI remains responsive during AI calculations.
+* **Gradle**: Powerful build system for dependency management.
 
 ## Features
 * **Two Game Modes**: Play against another player on the same device or challenge an AI opponent.
@@ -41,3 +42,4 @@ This project was built with the assistance of AI to optimize the development pro
 * **Code Refactoring**: The AI assisted in restructuring code to be more efficient, readable, and maintainable.
 * **Documentation**: The AI generated detailed KDoc documentation for the code, making it easier to understand and maintain.
 * **Project Documentation**: The AI created this README file to provide a clear overview of the project's features and technical details.
+
